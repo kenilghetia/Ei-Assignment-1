@@ -6,16 +6,18 @@ public class Main {
     public static void main(String[] args) {
         // Create a list of products
         List<Product> products = new ArrayList<>();
-        products.add(new Product("Laptop", 1000, true, new PercentageDiscountStrategy(18)));
-        products.add(new Product("Smartphone", 500, true, new PercentageDiscountStrategy(5)));
-        products.add(new Product("Monitor", 200, true, new PercentageDiscountStrategy(12)));
-        products.add(new Product("Mouse", 15, true, new PercentageDiscountStrategy(8)));
-        products.add(new Product("Chair", 100, true, new PercentageDiscountStrategy(15)));
-        products.add(new Product("Headphones", 50, true, new BuyOneGetOneFreeStrategy()));
-        products.add(new Product("Tablet", 300, true, new BuyOneGetOneFreeStrategy()));
-        products.add(new Product("Keyboard", 30, true, new BuyOneGetOneFreeStrategy()));
-        products.add(new Product("Printer", 150, true, new BuyOneGetOneFreeStrategy()));
-        products.add(new Product("Desk", 250, true, new BuyOneGetOneFreeStrategy()));
+
+        products.add(new ElectronicsProduct("Laptop", 1000, true, "Apple", new PercentageDiscountStrategy(18)));
+        products.add(new ElectronicsProduct("Smartphone", 500, true, "Motorola", new PercentageDiscountStrategy(5)));
+        products.add(new ElectronicsProduct("Monitor", 200, true, "HP", new PercentageDiscountStrategy(12)));
+        products.add(new ElectronicsProduct("Mouse", 15, true, "HP", new PercentageDiscountStrategy(8)));
+        products.add(new ElectronicsProduct("Chair", 100, true, "XYZ", new PercentageDiscountStrategy(15)));
+        products.add(new ElectronicsProduct("Headphones", 50, true, "boAt", new BuyOneGetOneFreeStrategy()));
+        products.add(new ElectronicsProduct("Tablet", 300, true, "Samsung", new BuyOneGetOneFreeStrategy()));
+        products.add(new ElectronicsProduct("Keyboard", 30, true, "HP", new BuyOneGetOneFreeStrategy()));
+        products.add(new ElectronicsProduct("Printer", 150, true, "HP", new BuyOneGetOneFreeStrategy()));
+        products.add(new ElectronicsProduct("Desk", 250, true, "XYZ", new BuyOneGetOneFreeStrategy()));
+
 
         // Initialize the shopping cart
         ShoppingCart cart = ShoppingCart.getInstance();
@@ -51,7 +53,7 @@ public class Main {
                         String productName = scanner.nextLine();
                         System.out.print("Enter quantity: ");
                         int quantity = scanner.nextInt();
-                        scanner.nextLine(); // Consume newline
+                        scanner.nextLine();
                         Product selectedProduct = products.stream()
                                 .filter(p -> p.getName().equalsIgnoreCase(productName))
                                 .findFirst()
