@@ -153,6 +153,9 @@ ShoppingCart class depends on the DiscountStrategy interface rather than concret
 
 ## Usage
 
+- Initial Screen  
+![image](https://github.com/kenilghetia/Ei-Assignment-1/assets/91539303/35c2d263-cbf9-49c6-9fe3-b67a44ef9aa3)
+
 
 ## Getting Started
 
