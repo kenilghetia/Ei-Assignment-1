@@ -8,23 +8,22 @@ I have implemented two problem statements in **Java**.
 
 # E-Commerce Cart System
 
+## Introduction
+This codebase represents a simple E-commerce cart system. The system allows users to interact with products, add them to a shopping cart, code apply various discount strategies, calculate the total bill and generate invoices. The codebase uses Java and follows Object-Oriented Programming (OOP) principles.
+
 ## Table of Contents
 
-- [Introduction](#introduction)
 - [Project Folder Structure](#project-folder-structure)
+- [Functionalities](#functionalities)
 - [Features](#features)
-- [Best Practices](#best-practices)
+  - [Use of Design Patterns in code](#use-of-design-patterns-in-code)
+  - [Use of OOP principles in code](#use-of-oop-principles-in-code)
+  - [Use of SOLID Principles in code](#use-of-solid-principles-in-code)
+- [Usage](#usage)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
-
-## Introduction
-This codebase represents a simple E-commerce cart system. The system allows users to interact with products, add them to a shopping cart, apply various discount strategies, calculate the total bill and generate invoices. The codebase uses Java and follows Object-Oriented Programming (OOP) principles.
 
 ## Project Folder Structure
 
@@ -42,17 +41,18 @@ This codebase represents a simple E-commerce cart system. The system allows user
     └── README.md
 
 
-## Features
+## Functionalities
 
-- Add products to the shopping cart.
-- Apply various discount strategies, including percentage-based discounts and "Buy One Get One Free" offers.
-- Update the quantity of products in the cart.
+- Application displays all products to user.
+- User can add products to the shopping cart.
+- Display current Cart Items to users.
+- allows user to update the quantity of products in the cart.
 - Remove products from the cart.
 - Calculate and display the total bill.
-- Generate invoices with detailed itemized information.
+- Code Applies discount strategies such as percentage-based discounts and "Buy One Get One Free" offer.
+- Generates invoice with detailed itemized information.
 
-
-## Best Practices
+## Features
 ### Use of Design Patterns in code
 
 - Singleton Pattern (ShoppingCart class)  
@@ -120,13 +120,10 @@ class Product {
     // Common attributes and behaviors
 }
 
-class Laptop extends Product {
-    // Specialized attributes and behaviors for laptops
+class ElectronicsProduct extends Product {
+    // Specialized attributes and behaviors for ElectronicsProduct
 }
 
-class Smartphone extends Product {
-    // Specialized attributes and behaviors for smartphones
-}
 
 // Polymorphism
 interface DiscountStrategy {
@@ -145,20 +142,16 @@ class BuyOneGetOneFreeStrategy implements DiscountStrategy {
 
 ### Use of SOLID Principles in Code
 
-- Single Responsibility Principle (SRP)
+- Single Responsibility Principle (SRP)  
 ShoppingCart and Product class have a single responsibility of manages the shopping cart's state and representing a product respectively
-- Open-Closed Principle (OCP)
+- Open-Closed Principle (OCP)  
 example of the OCP principle is that New discount strategies can be added by creating new classes that implement the DiscountStrategy interface without modifying existing code
-- Interface Segregation Principle (ISP)
+- Interface Segregation Principle (ISP)  
 DiscountStrategy interface is relatively focused on a single method, applyDiscount() which aligns with the ISP
-- Dependency Inversion Principle (DIP)
+- Dependency Inversion Principle (DIP)  
 ShoppingCart class depends on the DiscountStrategy interface rather than concrete discount strategy classes. This allows for flexibility in changing or extending discount strategies without modifying the ShoppingCart class
 
-## Application Overview
-
-### User Input along with images
-
-### Output
+## Usage
 
 
 ## Getting Started
@@ -166,13 +159,21 @@ ShoppingCart class depends on the DiscountStrategy interface rather than concret
 ### Prerequisites
 
 - Java Development Kit (JDK) 8 or higher
-- Git (optional, for cloning the repository)
+- Git (for cloning the repository)
 
 ### Installation
 
 1. Clone the repository:
-
    ```bash
    https://github.com/kenilghetia/Ei-Assignment-1.git
+2. Navigate to the project directory:
+   ```bash
+   cd ecommerce-shopping-cart
+3. Compile the code:
+   ```bash
+   javac com/ecommerce/*.java
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
+4. Run the application:
+   ```bash
+   java com.ecommerce.Main
+   ```
