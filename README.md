@@ -9,7 +9,7 @@ I have implemented two problem statements in **Java**.
 # E-Commerce Cart System
 
 ## Introduction
-This codebase represents a simple E-commerce cart system. The system allows users to interact with products, add them to a shopping cart, code apply various discount strategies, calculate the total bill and generate invoices. The codebase uses Java and follows Object-Oriented Programming (OOP) principles.
+This codebase represents a simple E-commerce cart system. The system allows users to interact with products, add them to a shopping cart, code apply various discount strategies, calculate the total bill and generate invoices. The codebase uses Java and follows Object-Oriented Programming (OOP) principles and implements Design patterns.
 
 ## Table of Contents
 
@@ -101,10 +101,10 @@ The Product class implements the Prototype Pattern. It allows for the cloning of
   ```
 
 ### Use of OOP principles in Code
-- Encapsulation
-defines several classes and Each class encapsulates related data and behavior within its scope
-- Inheritance
-defined a base class Product and specialized subclasses for different types of products
+- Encapsulation  
+defined several classes and each class encapsulates related data and behavior within its scope
+- Inheritance  
+defined a base class Product and specialized subclasses for different types of products (in this application only single subclass is used i.e ElectronicsProduct
 - Polymorphism
 
 illustration of how OOP concepts are applied
@@ -143,18 +143,38 @@ class BuyOneGetOneFreeStrategy implements DiscountStrategy {
 ### Use of SOLID Principles in Code
 
 - Single Responsibility Principle (SRP)  
-ShoppingCart and Product class have a single responsibility of manages the shopping cart's state and representing a product respectively
+ShoppingCart and Product class have a single responsibility of managing the shopping cart's state and representing a product respectively
 - Open-Closed Principle (OCP)  
-example of the OCP principle is that New discount strategies can be added by creating new classes that implement the DiscountStrategy interface without modifying existing code
+Example of the OCP principle is that new discount strategies can be added by creating new classes that implement the DiscountStrategy interface without modifying existing code
 - Interface Segregation Principle (ISP)  
-DiscountStrategy interface is relatively focused on a single method, applyDiscount() which aligns with the ISP
-- Dependency Inversion Principle (DIP)  
-ShoppingCart class depends on the DiscountStrategy interface rather than concrete discount strategy classes. This allows for flexibility in changing or extending discount strategies without modifying the ShoppingCart class
+DiscountStrategy interface is focused on a single method, applyDiscount() which aligns with the ISP
+
 
 ## Usage
 
 - Initial Screen  
 ![image](https://github.com/kenilghetia/Ei-Assignment-1/assets/91539303/35c2d263-cbf9-49c6-9fe3-b67a44ef9aa3)
+
+- Adding product to cart
+![image](https://github.com/kenilghetia/Ei-Assignment-1/assets/91539303/89cf82d3-03d3-46e9-9085-73dce4f6ce73)
+- Percentage Off  
+![image](https://github.com/kenilghetia/Ei-Assignment-1/assets/91539303/75c6e3c2-2072-413b-826a-786235e1e8df)
+- Buy one get one free  
+![image](https://github.com/kenilghetia/Ei-Assignment-1/assets/91539303/89720caf-0a27-4299-9055-6f00ad4be111)
+- Remove product from cart  
+![image](https://github.com/kenilghetia/Ei-Assignment-1/assets/91539303/29f165c6-e356-494e-be06-a49e68739ce4)
+- Display cart items  
+![image](https://github.com/kenilghetia/Ei-Assignment-1/assets/91539303/c62be75f-381b-4d95-9225-6d0c1ad9252c)
+- Display total bill  
+![image](https://github.com/kenilghetia/Ei-Assignment-1/assets/91539303/94546330-bdff-438b-830c-082ce4a2bbd8)
+- Generate invoice  
+![image](https://github.com/kenilghetia/Ei-Assignment-1/assets/91539303/5c1f9988-3fe3-43f3-84be-376529a65ba0)
+
+- Update Cart items  
+![image](https://github.com/kenilghetia/Ei-Assignment-1/assets/91539303/048c9657-cecc-48c8-be20-6ac5c360db6d)
+![image](https://github.com/kenilghetia/Ei-Assignment-1/assets/91539303/d5f98a8c-17d6-42ae-91d1-33a10252a177)
+
+
 
 
 ## Getting Started
